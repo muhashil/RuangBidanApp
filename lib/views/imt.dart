@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:belajar_flutter/views/imt_result.dart';
+import 'package:ruang_bidan/views/imt_result.dart';
 
 class ImtView extends StatefulWidget {
   @override
@@ -27,8 +27,8 @@ class _ImtViewState extends State<ImtView> {
                 decoration: InputDecoration(
                   labelText: 'Berat badan sebelum hamil (kg)',
                   labelStyle: TextStyle(fontSize: 16.0),
-                  // hintText: 'Tulis angka disini',
-                  // hintStyle: TextStyle(fontSize: 12.0),
+                  hintText: 'Tulis berat badan',
+                  hintStyle: TextStyle(fontSize: 14.0),
                   border: OutlineInputBorder(
                     borderSide:
                         BorderSide(color: Colors.blue.shade200, width: 2.0),
@@ -50,9 +50,8 @@ class _ImtViewState extends State<ImtView> {
                 decoration: InputDecoration(
                   labelText: 'Tinggi Badan (cm)',
                   labelStyle: TextStyle(fontSize: 16.0),
-                  // hintText: 'Tulis angka disini',
-                  // hintStyle: TextStyle(fontSize: 12.0),
-                  // hintText: '',
+                  hintText: 'Tulis tinggi badan',
+                  hintStyle: TextStyle(fontSize: 14.0),
                   border: OutlineInputBorder(
                     borderSide:
                         BorderSide(color: Colors.blue.shade200, width: 2.0),

@@ -1,8 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.belajar_flutter">
+    package="com.senjatech.ruangbidanapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
    <application
-        android:label="belajar_flutter"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Ruang Bidan"
+        android:icon="@mipmap/ruangbidan_launcher">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

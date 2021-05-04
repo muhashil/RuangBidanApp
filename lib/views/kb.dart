@@ -1,4 +1,4 @@
-import 'package:belajar_flutter/views/kb_result.dart';
+import 'package:ruang_bidan/views/kb_result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
@@ -41,7 +41,7 @@ class _KbViewState extends State<KbView> {
               setState(() => {_selectDate(context)})
             },
             decoration: InputDecoration(
-              labelText: 'Tanggal',
+              labelText: 'Tanggal Suntik Terakhir',
               labelStyle: TextStyle(fontSize: 16.0),
               hintText: _formatter.format(_selectedDate),
               border: OutlineInputBorder(

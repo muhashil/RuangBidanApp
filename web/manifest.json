@@ -1,11 +1,11 @@
 {
-    "name": "belajar_flutter",
-    "short_name": "belajar_flutter",
+    "name": "Ruang Bidan",
+    "short_name": "ruang_bidan",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Aplikasi ruang bidan.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

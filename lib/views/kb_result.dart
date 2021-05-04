@@ -12,7 +12,7 @@ class KbResultView extends StatelessWidget {
   }) : super(key: key);
 
   Widget _buildKbResult() {
-    DateTime nextSuntikKb = selectedDate.add(const Duration(days: 30));
+    DateTime nextSuntikKb = selectedDate.add(const Duration(days: 84));
 
     return TextFormField(
       readOnly: true,

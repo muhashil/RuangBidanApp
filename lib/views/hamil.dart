@@ -1,4 +1,4 @@
-import 'package:belajar_flutter/views/hamil_result.dart';
+import 'package:ruang_bidan/views/hamil_result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
@@ -47,7 +47,7 @@ class _HamilViewState extends State<HamilView> {
             },
             decoration: InputDecoration(
               labelText: 'Tanggal pertama haid terakhir',
-              labelStyle: TextStyle(fontSize: 16.0),
+              labelStyle: TextStyle(fontSize: 18.0),
               hintText: _formatter.format(lastHaidDate),
               border: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.blue.shade200, width: 2.0),
@@ -60,28 +60,28 @@ class _HamilViewState extends State<HamilView> {
             ),
           ),
           SizedBox(height: 24),
-          TextFormField(
-            // controller: _controller,
-            readOnly: true,
-            onTap: () => {
-              setState(() => {_selectDate(context, 'second')})
-            },
-            // initialValue: _formatter.format(_today),
-            decoration: InputDecoration(
-              labelText: 'Tanggal sekarang',
-              labelStyle: TextStyle(fontSize: 16.0),
-              hintText: _formatter.format(dateToday),
-              border: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.blue.shade200, width: 2.0),
-              ),
-              suffixIcon: Icon(
-                CupertinoIcons.calendar_today,
-                color: Colors.black54,
-              ),
-              floatingLabelBehavior: FloatingLabelBehavior.always,
-            ),
-          ),
-          SizedBox(height: 24),
+          // TextFormField(
+          //   // controller: _controller,
+          //   readOnly: true,
+          //   onTap: () => {
+          //     setState(() => {_selectDate(context, 'second')})
+          //   },
+          //   // initialValue: _formatter.format(_today),
+          //   decoration: InputDecoration(
+          //     labelText: 'Tanggal sekarang',
+          //     labelStyle: TextStyle(fontSize: 16.0),
+          //     hintText: _formatter.format(dateToday),
+          //     border: OutlineInputBorder(
+          //       borderSide: BorderSide(color: Colors.blue.shade200, width: 2.0),
+          //     ),
+          //     suffixIcon: Icon(
+          //       CupertinoIcons.calendar_today,
+          //       color: Colors.black54,
+          //     ),
+          //     floatingLabelBehavior: FloatingLabelBehavior.always,
+          //   ),
+          // ),
+          // SizedBox(height: 24),
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(

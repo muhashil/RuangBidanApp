@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:belajar_flutter/nav.dart';
+import 'package:ruang_bidan/nav.dart';
 
 void main() {
   runApp(MyApp());
