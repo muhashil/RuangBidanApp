@@ -3,12 +3,10 @@ import 'package:intl/intl.dart' as intl;
 
 class HamilResultView extends StatelessWidget {
   final DateTime lastHaidDate;
-  final DateTime dateToday;
   final formatter = intl.DateFormat('dd MMMM yyyy');
   int dayReduction = 7;
   int monthReduction = 3;
   int yearAddition = 1;
-  int dateDifference;
   Map tabelKehamilan = {
     8: {'rerata_bb': 1, 'rerata_tinggi': 4.0, 'rerata_bb_ibu': 0.5},
     9: {'rerata_bb': 4, 'rerata_tinggi': 4.0, 'rerata_bb_ibu': 0.7},
@@ -48,13 +46,16 @@ class HamilResultView extends StatelessWidget {
   };
 
   HamilResultView({
-    Key key,
+    Key key, 
     @required this.lastHaidDate,
-    @required this.dateToday,
-  })  : dateDifference = dateToday.difference(lastHaidDate).inDays,
-        super(key: key);
+  }) : super(key: key);
 
-  Widget _buildBirtdayEstimation() {
+  int _getDateDifference(date) {
+    // return date difference from today 
+    return DateTime.now().difference(date).inDays;
+  }
+
+  Widget _buildBirthdayEstimation() {
     int nextMonth = lastHaidDate.month + 1;
     if (nextMonth == 13) {
       nextMonth = 1;
@@ -93,8 +94,8 @@ class HamilResultView extends StatelessWidget {
   }
 
   Widget _buildPregnancyAge() {
-    int days = dateDifference % 7;
-    int weeks = dateDifference ~/ 7;
+    int days = _getDateDifference(lastHaidDate) % 7;
+    int weeks = _getDateDifference(lastHaidDate) ~/ 7;
     weeks = weeks.toInt();
 
     String umurHamil = "${weeks} minggu";
@@ -119,7 +120,7 @@ class HamilResultView extends StatelessWidget {
   }
 
   Widget _buildTrimester() {
-    int weeks = dateDifference ~/ 7;
+    int weeks = _getDateDifference(lastHaidDate) ~/ 7;
     weeks = weeks.toInt();
 
     int trimester = 0;
@@ -150,7 +151,7 @@ class HamilResultView extends StatelessWidget {
   }
 
   Widget _buildJaninWeight() {
-    int weeks = dateDifference ~/ 7;
+    int weeks = _getDateDifference(lastHaidDate) ~/ 7;
     String result = '';
 
     var dataKehamilan = tabelKehamilan[weeks];
@@ -178,7 +179,7 @@ class HamilResultView extends StatelessWidget {
   }
 
   Widget _buildJaninHeight() {
-    int weeks = dateDifference ~/ 7;
+    int weeks = _getDateDifference(lastHaidDate) ~/ 7;
     String result = '';
 
     var dataKehamilan = tabelKehamilan[weeks];
@@ -206,7 +207,7 @@ class HamilResultView extends StatelessWidget {
   }
 
   Widget _buildMotherWeightGrowth() {
-    int weeks = dateDifference ~/ 7;
+    int weeks = _getDateDifference(lastHaidDate) ~/ 7;
     String result = '';
 
     var dataKehamilan = tabelKehamilan[weeks];
@@ -263,7 +264,7 @@ class HamilResultView extends StatelessWidget {
               ),
             ),
             SizedBox(height: 24),
-            _buildBirtdayEstimation(),
+            _buildBirthdayEstimation(),
             SizedBox(height: 24),
             _buildPregnancyAge(),
             SizedBox(height: 24),

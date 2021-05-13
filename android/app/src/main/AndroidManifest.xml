@@ -4,7 +4,7 @@
     android:versionName="1.0" >
    <application
         android:label="Ruang Bidan"
-        android:icon="@mipmap/ruangbidan_launcher">
+        android:icon="@mipmap/ic_ruangbidan">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

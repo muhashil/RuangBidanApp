@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ruang_bidan/views/imt_result.dart';
+import 'package:ruang_bidan/views/imt/result.dart';
 
 class ImtView extends StatefulWidget {
   @override
@@ -39,6 +39,10 @@ class _ImtViewState extends State<ImtView> {
                   if (value == null || value.isEmpty) {
                     return 'Kolom wajib diisi.';
                   }
+
+                  if (int.parse(value) <= 0) {
+                    return 'Tinggi badan tidak valid.';
+                  }
                   return null;
                 },
                 onSaved: (value) {
@@ -61,6 +65,10 @@ class _ImtViewState extends State<ImtView> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Kolom wajib diisi.';
+                  }
+
+                  if (int.parse(value) <= 0) {
+                    return 'Tinggi badan tidak valid.';
                   }
                   return null;
                 },

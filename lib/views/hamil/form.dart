@@ -1,4 +1,4 @@
-import 'package:ruang_bidan/views/hamil_result.dart';
+import 'package:ruang_bidan/views/hamil/result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
@@ -10,25 +10,20 @@ class HamilView extends StatefulWidget {
 
 class _HamilViewState extends State<HamilView> {
   // final _controller = TextEditingController();
-  final _formatter = intl.DateFormat('dd MMMM yyyy');
-  DateTime lastHaidDate = DateTime.now();
-  DateTime dateToday = DateTime.now();
+  final formatter = intl.DateFormat('dd MMMM yyyy');
+  DateTime _selectedDate = DateTime.now();
 
-  Future<Null> _selectDate(BuildContext context, String flag) async {
+  Future<Null> selectLastHaidDate(BuildContext context) async {
     DateTime _datePicker = await showDatePicker(
         context: context,
-        initialDate: dateToday,
+        initialDate: _selectedDate,
         firstDate: DateTime(2000),
         lastDate: DateTime(2030),
         textDirection: TextDirection.ltr);
 
-    if (_datePicker != null && _datePicker != dateToday) {
+    if (_datePicker != null && _datePicker != _selectedDate) {
       setState(() {
-        if (flag == 'first') {
-          lastHaidDate = _datePicker;
-        } else {
-          dateToday = _datePicker;
-        }
+        _selectedDate = _datePicker;
       });
     }
   }
@@ -43,12 +38,12 @@ class _HamilViewState extends State<HamilView> {
             // controller: _controller,
             readOnly: true,
             onTap: () => {
-              setState(() => {_selectDate(context, 'first')})
+              setState(() => {selectLastHaidDate(context)})
             },
             decoration: InputDecoration(
               labelText: 'Tanggal pertama haid terakhir',
               labelStyle: TextStyle(fontSize: 18.0),
-              hintText: _formatter.format(lastHaidDate),
+              hintText: formatter.format(_selectedDate),
               border: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.blue.shade200, width: 2.0),
               ),
@@ -60,34 +55,11 @@ class _HamilViewState extends State<HamilView> {
             ),
           ),
           SizedBox(height: 24),
-          // TextFormField(
-          //   // controller: _controller,
-          //   readOnly: true,
-          //   onTap: () => {
-          //     setState(() => {_selectDate(context, 'second')})
-          //   },
-          //   // initialValue: _formatter.format(_today),
-          //   decoration: InputDecoration(
-          //     labelText: 'Tanggal sekarang',
-          //     labelStyle: TextStyle(fontSize: 16.0),
-          //     hintText: _formatter.format(dateToday),
-          //     border: OutlineInputBorder(
-          //       borderSide: BorderSide(color: Colors.blue.shade200, width: 2.0),
-          //     ),
-          //     suffixIcon: Icon(
-          //       CupertinoIcons.calendar_today,
-          //       color: Colors.black54,
-          //     ),
-          //     floatingLabelBehavior: FloatingLabelBehavior.always,
-          //   ),
-          // ),
-          // SizedBox(height: 24),
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => HamilResultView(
-                        lastHaidDate: lastHaidDate,
-                        dateToday: dateToday,
+                        lastHaidDate: _selectedDate,
                       )));
             },
             child: Padding(

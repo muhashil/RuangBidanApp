@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ruang_bidan/views/hamil.dart';
-import 'package:ruang_bidan/views/kb.dart';
-import 'package:ruang_bidan/views/imt.dart';
+import 'package:ruang_bidan/views/hamil/form.dart';
+import 'package:ruang_bidan/views/kb/form.dart';
+import 'package:ruang_bidan/views/imt/form.dart';
 
 
 
