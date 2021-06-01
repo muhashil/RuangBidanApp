@@ -41,7 +41,7 @@ class _HamilViewState extends State<HamilView> {
               setState(() => {selectLastHaidDate(context)})
             },
             decoration: InputDecoration(
-              labelText: 'Tanggal pertama haid terakhir',
+              labelText: 'Hari Pertama Haid Terakhir (HPHT)',
               labelStyle: TextStyle(fontSize: 18.0),
               hintText: formatter.format(_selectedDate),
               border: OutlineInputBorder(

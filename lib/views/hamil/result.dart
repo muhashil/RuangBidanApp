@@ -251,7 +251,7 @@ class HamilResultView extends StatelessWidget {
               enableInteractiveSelection: false,
               decoration: InputDecoration(
                 enabled: true,
-                labelText: 'Tanggal pertama haid terakhir',
+                labelText: 'Hari Pertama Haid Terakhir (HPHT)',
                 labelStyle: TextStyle(fontSize: 18.0),
                 hintText: formatter.format(lastHaidDate),
                 // hintStyle: TextStyle(fontSize: 12.0),

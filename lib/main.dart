@@ -7,7 +7,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   
-  Map<int, Color> color = {
+  final Map<int, Color> color = {
     50:Color.fromRGBO(217,0,116, .1),
     100:Color.fromRGBO(217,0,116, .2),
     200:Color.fromRGBO(217,0,116, .3),
@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Aplikasi Ruang Bidan',
       theme: ThemeData(
         primarySwatch: MaterialColor(0xFFD90074, color),
+        primaryColor: MaterialColor(0xFFD90074, color),
       ),
       home: Nav(),
     );
